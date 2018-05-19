@@ -1,0 +1,39 @@
+[package]
+authors = ["Vinzent Steinberg <Vinzent.Steinberg@gmail.com>", "Tommy Ettinger <tommy.ettinger@gmail.com>"]
+categories = ["algorithms"]
+description = "Xoroshiro128+, xorshift1024*φ, splitmix64, and linnorm64 random number generators"
+documentation = "https://docs.rs/xoroshiro"
+keywords = ["rng"]
+license = "MIT/Apache-2.0"
+name = "heh"
+repository = "https://github.com/tommyettinger/heh"
+version = "0.2.0"
+autobenches = false
+
+[[bench]]
+harness = false
+name = "bench"
+
+[dependencies]
+rand_core = "0.2.0-pre.0"
+
+[dependencies.aesni]
+optional = true
+version = "0.3"
+
+[dependencies.byteorder]
+default-features = false
+version = "1"
+
+[dependencies.faster]
+optional = true
+git = "https://github.com/AdamNiederer/faster"
+branch = "master"
+
+[dev-dependencies]
+bencher = "0.1"
+rand = "0.5.0-pre.0"
+
+[features]
+default = []
+unstable = ["aesni", "faster"]
