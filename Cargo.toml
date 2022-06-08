@@ -15,7 +15,7 @@ harness = false
 name = "bench"
 
 [dependencies]
-rand_core = "0.2.0-pre.0"
+rand_core = "0.3.1"
 
 [dependencies.aesni]
 optional = true
